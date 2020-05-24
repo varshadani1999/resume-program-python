@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RESUME</title>
+</head>
+<body bgcolor="pink">
+{% block content %}
+<div id="main">
+<div class="h-tag">
+<h2>Resume details</h2>
+</div>
+<div class="resume">
+<table cellspacing="2" align="center" cellpadding="8" border="0">
+<tr>
+<td align="right">FNAME : </td>
+<td><label for="t0"></label><input type="text" placeholder="{{ FNAME }}" id="t0" class="tb" /></td>
+</tr>
+<tr>
+<td align="right">LNAME : </td>
+<td><input type="text" placeholder="{{ LNAME }}" id="t1" class="tb"/></td>
+</tr>
+<tr>
+<td align="right">MAILID : </td>
+<td><label for="t2"></label><input type="text" placeholder="{{ MAILID }}" id="t2" class="tb" /></td>
+</tr>
+<tr>
+<td align="right">PHONENUMBER : </td>
+<td><input type="number" placeholder="{{ PHONENUMBER }}" id="t3" class="tb" /></td>
+</tr>
+<tr>
+<td align="right">ADDRESS : </td>
+<td><label for="t4"></label><input type="text" placeholder="{{ ADDRESS }}" id="t4" class="tb" /></td>
+</tr>
+<tr>
+<td align="right">CITY : </td>
+<td><label for="t5"></label><input type="text" placeholder="{{ CITY }}" id="t5" class="tb" /></td>
+</tr>
+<tr>
+<td align="right">PINCODE : </td>
+<td><input type="number" placeholder="{{ PINCODE }}" id="t6" class="tb" /></td>
+</tr>
+<tr>
+<td align="right">STATE : </td>
+<td><input type="text" placeholder="{{ STATE }}" id="t7" class="tb" /></td>
+</tr>
+<tr>
+<td align="right">COUNTRY : </td>
+<td><input type="text" placeholder="{{ COUNTRY }}" id="t8" class="tb" /></td>
+</tr>
+<tr>
+<td align="right">SKILLS : </td>
+<td><input type="text" placeholder="{{ SKILLS }}" id="t9" class="tb" /></td>
+</tr>
+<tr>
+<td align="right">WORKEXPERIENCE : </td>
+<td><input type="text" placeholder="{{ WORKEXPERIENCE }}" id="t10" class="tb" /></td>
+</tr>
+<tr>
+<td align="right">EDUCATION : </td>
+<td><input type="text" placeholder="{{ EDUCATION }}" id="t11" class="tb" /></td>
+</tr>
+</table>
+</div>
+</div>
+{% endblock %}
+</body>
+</html>
+
+

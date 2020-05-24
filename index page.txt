@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor="aqua">
+{% block content %}
+
+	<br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <h3 align ="center">
+		<h1><center><b>DANVARSHA</b></center></h1>
+	</h3>
+	<h3 align ="center">
+		<p>Click on the "Choose file"button to upload a file : </p>
+		<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+			<input type ="file" name="document">
+			<input type="Submit" value="Submit">
+	</form>
+	</h3>
+{% endblock %}
+</body>
+</html>

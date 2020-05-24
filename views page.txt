@@ -1,0 +1,54 @@
+from django.shortcuts import render, redirect
+from .forms import StudentForm
+from docx import *
+
+
+def webpage(request):
+
+    if request.method == "POST":
+        file = str(request.FILES['document']).split(".")
+        if "docx" in file:
+
+            document = Document(request.FILES['document'])
+            lines = []
+            for para in document.paragraphs:
+                temp = ""
+                line = (para.text).split()
+                c = 0
+                for x in line:
+                    if (x == ":"):
+                        c = 1
+                    if (c > 1):
+                        temp += x + " "
+                    c += 1
+                print(temp)
+                lines.append(temp.strip())
+
+
+            context = {'FNAME': lines[0],
+                       'LNAME': lines[1],
+                       'MAILID': lines[2],
+                       'PHONENUMBER': lines[3],
+                       'ADDRESS': lines[4],
+                       'CITY': lines[5],
+                       'PINCODE': lines[6],
+                       'STATE': lines[7],
+                       'COUNTRY': lines[8],
+                       'SKILLS': lines[9],
+                       'WORKEXPERIENCE': lines[10],
+                       'EDUCATION': lines[11]
+                       }
+            revaluation = ""
+            for x in context:
+                if (context[x] == ""):
+                    revaluation += x + " "
+            if revaluation != "":
+                return render(request, "Empty.html", {"Valid":revaluation.strip()})
+            form = StudentForm(context)
+            print(form)
+            if form.is_valid():
+                form.save(context)
+                return redirect('/sample1')
+        else:
+            return render(request,'wrongresume.html')
+    return render(request, 'sample1.html')

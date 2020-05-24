@@ -1,0 +1,20 @@
+from django.db import models
+
+
+class Student(models.Model):
+    FNAME = models.CharField(max_length=100)
+    LNAME = models.CharField(max_length=100)
+    MAILID = models.EmailField(max_length=100)
+    PHONENUMBER = models.CharField(max_length=18)
+    ADDRESS = models.CharField(max_length=100)
+    CITY = models.CharField(max_length=100)
+    PINCODE = models.CharField(max_length=10)
+    STATE = models.CharField(max_length=100)
+    COUNTRY = models.CharField(max_length=100)
+    SKILLS = models.CharField(max_length=100)
+    WORKEXPERIENCE = models.CharField(max_length=100)
+    EDUCATION = models.CharField(max_length=100)
+
+
+class Meta:
+    db_table = 'student'
