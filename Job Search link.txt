@@ -1,0 +1,21 @@
+from selenium import webdriver
+import time
+from selenium.webdriver.common.keys import Keys
+driver = webdriver.Chrome()
+driver.get('https://www.linkedin.com')
+time.sleep(10)
+primary_in_button = driver.find_element_by_class_name('nav__button-secondary')
+primary_in_button.click()
+time.sleep(4)
+username = driver.find_element_by_name('session_key')
+username.send_keys("varshadani1999@gmail.com")
+time.sleep(5)
+password = driver.find_element_by_name('session_password')
+password.send_keys("custicnoty560")
+time.sleep(4)
+log_in_button = driver .find_element_by_xpath('//*[@type="submit"]')
+log_in_button.click()
+time.sleep(8)
+search_query = driver.find_element_by_xpath('//*[@id="ember41"]/input')
+search_query.send_keys('"python jobs"')
+search_query.send_keys(Keys.RETURN)
